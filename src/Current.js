@@ -18,7 +18,7 @@ export default function Current(props) {
         </a>
       </span>
       <p class="conditionIcon" id="currentCondition">
-        <i class="fa-solid fa-cloud-rain" className="conditionIcon"></i> Rainy
+        <i className="fa-solid fa-cloud-rain conditionIcon"></i> Rainy
       </p>
       <div id="weatherInfo">
         <p class="tempRange">H:45° L:40°</p>
