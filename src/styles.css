@@ -11,3 +11,94 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(78, 112, 157) 11.2%,
+    rgb(137, 164, 199) 65%,
+    rgb(205, 213, 224) 100.2%
+  );
+  height: 100vh;
+}
+
+.current {
+  text-align: center !important;
+  color: rgb(205, 213, 224) !important;
+}
+
+.units {
+  font-size: 20px;
+  margin: 0 auto;
+}
+.searchBar {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+.btn-primary {
+  background-color: rgb(205, 213, 224) !important;
+  border-color: rgb(205, 213, 224) !important;
+}
+.btn-primary:hover {
+  background-color: rgb(137, 164, 199) !important;
+  border-color: rgb(137, 164, 199) !important;
+}
+.btn-primary:focus {
+  background-color: rgb(78, 112, 157) !important;
+}
+.search {
+  color: rgb(205, 213, 224) !important;
+  border-style: none !important;
+}
+.fa-cloud-rain {
+  font-size: 25px !important;
+}
+.conditionIcon {
+  font-size: 25px !important;
+  margin: 0 auto !important;
+}
+.tempRange {
+  font-size: var(--bs-body-font-size);
+  margin: 0 auto;
+}
+#humidity {
+  margin: 0 auto;
+}
+
+.card {
+  display: block !important;
+  margin: 0 auto !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+.list-group-item {
+  background-color: transparent !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.submit {
+  color: fieldText;
+  border-radius: 5px;
+  border-color: rgb(205, 213, 224);
+  border-style: none;
+}
+Footer {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+#currentCondition {
+  text-transform: capitalize;
+  margin: 10px;
+}
+.city {
+  font-size: 30px;
+  margin: 0 auto;
+}
+#temp {
+  font-size: 55px;
+  margin: 0 auto;
+}

@@ -9,17 +9,11 @@ export default function Current(props) {
       </h1>
       <h1 id="temp">60°</h1>
       <span class="units">
-        <a
-          href="https://react-bootstrap.github.io/getting-started/introduction/"
-          id="celsius-link"
-        >
+        <a href="/" id="celsius-link">
           °C
         </a>{" "}
         |
-        <a
-          href="https://react-bootstrap.github.io/getting-started/introduction/"
-          id="fahrenheit-link"
-        >
+        <a href="/" id="fahrenheit-link">
           °F
         </a>
       </span>
