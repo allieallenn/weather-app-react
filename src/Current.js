@@ -1,14 +1,23 @@
 import React from "react";
 
+/**
+ * 
+ * Props:
+temp
+description
+humidity
+wind
+icon
+ */
 export default function Current(props) {
   return (
-    <section class="current">
+    <section className="current">
       <p id="currentDate"></p>
-      <h1 class="city" id="searched-city">
-        Dallas, Tx
+      <h1 className="city" id="searched-city">
+        {props.city}
       </h1>
-      <h1 id="temp">60°</h1>
-      <span class="units">
+      <h1 id="temp">{props.temp}°</h1>
+      <span className="units">
         <a href="/" id="celsius-link">
           °C
         </a>{" "}
@@ -17,13 +26,16 @@ export default function Current(props) {
           °F
         </a>
       </span>
-      <p class="conditionIcon" id="currentCondition">
-        <i className="fa-solid fa-cloud-rain conditionIcon"></i> Rainy
+      <p className="conditionIcon" id="currentCondition">
+        <i className="fa-solid fa-cloud-rain conditionIcon">{props.icon}</i>{" "}
+        {props.description}
       </p>
       <div id="weatherInfo">
-        <p class="tempRange">H:45° L:40°</p>
-        <p id="humidity">Humidity: 20%</p>
-        <p id="windSpeed">Windspeed: 24 MPH</p>
+        <p className="tempRange">
+          H:{props.maxTemp}° L:{props.minTemp}°
+        </p>
+        <p id="humidity">Humidity: {props.humidity}%</p>
+        <p id="windSpeed">Windspeed: {props.wind} MPH</p>
       </div>
     </section>
   );

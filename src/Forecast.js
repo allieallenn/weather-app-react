@@ -1,7 +1,33 @@
 import React from "react";
-import ForecastDay from "./Forecast-day";
 
 export default function Forecast(props) {
+  let forecast = [
+    {
+      day: "Today",
+      max: 32,
+      min: 18,
+    },
+    {
+      day: "Wednesday",
+      max: 45,
+      min: 17,
+    },
+    {
+      day: "Thursday",
+      max: 30,
+      min: 10,
+    },
+    {
+      day: "Friday",
+      max: 50,
+      min: 20,
+    },
+    {
+      day: "Saturday",
+      max: 43,
+      min: 25,
+    },
+  ];
   return (
     <div className="card" style={{ width: "30rem" }}>
       <div className="card-header">
@@ -9,11 +35,13 @@ export default function Forecast(props) {
         <i className="fa-regular fa-calendar-days"></i>
       </div>
       <ul className="list-group list-group-flush">
-        <ForecastDay day="Today" max="32" min="18" />
-        <ForecastDay day="Wednesday" max="45" min="28" />
-        <ForecastDay day="Thursday" max="30" min="10" />
-        <ForecastDay day="Friday" max="67" min="30" />
-        <ForecastDay day="Saturday" max="35" min="32" />
+        {forecast.props.map(function (forecast, index) {
+          return (
+            <li key={index}>
+              {forecast.day} {forecast.max}°/{forecast.min}°
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
