@@ -28,7 +28,6 @@ export default function FormattedDate(props) {
     "December",
   ];
   let month = months[now.getMonth()];
-  let year = now.getFullYear();
   return (
     <div className="currentDate">
       {day}, {month} {date}
