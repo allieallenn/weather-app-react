@@ -11,7 +11,7 @@ export default function App() {
     event.preventDefault();
     event.stopPropagation();
     const apiKey = "017d56650cd168d68067850318775d43";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(url).then(showWeather);
   }
 
@@ -33,7 +33,7 @@ export default function App() {
     setDescription(response.data.weather[0].description);
     setHumidity(response.data.main.humidity);
     setWind(Math.round(response.data.wind.speed));
-    setIcon(response.data.weather[0].icon);
+    setIcon(getConditionIcons(response.data.weather[0].main));
     setIsShowingWeather(true);
     setDate(new Date(response.data.dt * 1000));
   }
@@ -56,6 +56,7 @@ export default function App() {
       ash: "fa-solid fa-volcano",
       tornado: "fa-solid fa-tornado",
     };
+    return obj[weather.toLowerCase()];
   }
 
   return (
@@ -65,7 +66,6 @@ export default function App() {
         <>
           <FormattedDate className="currentDate" date={date} />
           <Current
-            date={date}
             city={city}
             temp={temp}
             maxTemp={maxTemp}
@@ -77,6 +77,7 @@ export default function App() {
           />
         </>
       ) : null}
+
       {/* <Forecast /> */}
     </>
   );
