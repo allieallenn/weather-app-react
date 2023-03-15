@@ -29,7 +29,6 @@ export default function FormattedDate(props) {
   ];
   let month = months[now.getMonth()];
   let year = now.getFullYear();
-  console.log(date);
   return (
     <div className="currentDate">
       {day}, {month} {date}
