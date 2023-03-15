@@ -3,6 +3,7 @@ import axios from "axios";
 import "./styles.css";
 import Search from "./Search";
 import Current from "./Current";
+import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
   }
 
   let [city, setCity] = useState();
+  let [date, setDate] = useState();
   let [temp, setTemp] = useState("");
   let [maxTemp, setMaxTemp] = useState();
   let [minTemp, setMinTemp] = useState();
@@ -33,6 +35,7 @@ export default function App() {
     setWind(Math.round(response.data.wind.speed));
     setIcon(response.data.weather[0].icon);
     setIsShowingWeather(true);
+    setDate(new Date(response.data.dt * 1000));
   }
   function getConditionIcons(weather) {
     const obj = {
@@ -56,21 +59,25 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <Search handleSubmit={handleSubmit} setCity={setCity} />
       {isShowingWeather ? (
-        <Current
-          city={city}
-          temp={temp}
-          maxTemp={maxTemp}
-          minTemp={minTemp}
-          description={description}
-          humidity={humidity}
-          wind={wind}
-          icon={icon}
-        />
+        <>
+          <FormattedDate className="currentDate" date={date} />
+          <Current
+            date={date}
+            city={city}
+            temp={temp}
+            maxTemp={maxTemp}
+            minTemp={minTemp}
+            description={description}
+            humidity={humidity}
+            wind={wind}
+            icon={icon}
+          />
+        </>
       ) : null}
       {/* <Forecast /> */}
-    </div>
+    </>
   );
 }

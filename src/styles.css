@@ -102,3 +102,9 @@ Footer {
   font-size: 55px;
   margin: 0 auto;
 }
+.currentDate {
+  text-align: center !important;
+  color: rgb(205, 213, 224) !important;
+  font-size: 20px;
+  margin: 0 auto;
+}

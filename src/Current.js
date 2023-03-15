@@ -1,5 +1,4 @@
 import React from "react";
-
 /**
  * 
  * Props:
@@ -12,7 +11,6 @@ icon
 export default function Current(props) {
   return (
     <section className="current">
-      <p id="currentDate"></p>
       <h1 className="city" id="searched-city">
         {props.city}
       </h1>
