@@ -4,7 +4,7 @@ import "./styles.css";
 import Search from "./Search";
 import Current from "./Current";
 import FormattedDate from "./FormattedDate";
-import Forecast from "./Forecast";
+// import Forecast from "./Forecast";
 
 export default function App() {
   function handleSubmit(event) {
