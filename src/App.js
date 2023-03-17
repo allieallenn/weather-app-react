@@ -4,7 +4,7 @@ import "./styles.css";
 import Search from "./Search";
 import Current from "./Current";
 import FormattedDate from "./FormattedDate";
-// import Forecast from "./Forecast";
+import Forecast from "./Forecast";
 
 export default function App() {
   function handleSubmit(event) {
@@ -24,6 +24,7 @@ export default function App() {
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
   let [icon, setIcon] = useState("");
+  let [coords, setCoords] = useState();
   let [isShowingWeather, setIsShowingWeather] = useState(false);
 
   function showWeather(response) {
@@ -34,6 +35,7 @@ export default function App() {
     setHumidity(response.data.main.humidity);
     setWind(Math.round(response.data.wind.speed));
     setIcon(getConditionIcons(response.data.weather[0].main));
+    setCoords(response.data.coord);
     setIsShowingWeather(true);
     setDate(new Date(response.data.dt * 1000));
   }
@@ -67,6 +69,7 @@ export default function App() {
           <FormattedDate className="currentDate" date={date} />
           <Current
             city={city}
+            coords={coords}
             temp={temp}
             maxTemp={maxTemp}
             minTemp={minTemp}
@@ -75,10 +78,9 @@ export default function App() {
             wind={wind}
             icon={icon}
           />
+          <Forecast coords={coords} icon={icon} />
         </>
       ) : null}
-
-      {/* <Forecast /> */}
     </>
   );
 }

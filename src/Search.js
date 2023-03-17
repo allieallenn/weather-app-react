@@ -1,5 +1,4 @@
 import React from "react";
-// 1 Prop onSubmit is a function that receives a string as argument
 export default function Search(props) {
   function changeCity(event) {
     props.setCity(event.target.value);

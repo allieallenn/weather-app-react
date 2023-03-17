@@ -1,13 +1,5 @@
 import React from "react";
-/**
- * 
- * Props:
-temp
-description
-humidity
-wind
-icon
- */
+
 export default function Current(props) {
   return (
     <section className="current">
